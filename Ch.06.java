@@ -11,8 +11,6 @@ public class Tv {
 	void channelDown() {--channel;} // TV의 채널을 낮추는 기능을 하는 메서드
 }
 
-<br></br>
-
 public class TvTest {
 
 	public static void main(String[] args) {
@@ -177,3 +175,78 @@ public class Ex6_8 {
 		return tmp;
 	}
 }
+
+public class CallStackTest {
+
+	public static void main(String[] args) {
+		firstMethod();
+	}
+
+	static void firstMethod() {
+		secondMethod();
+	}
+
+	static void secondMethod() {
+		System.out.println("secondMethod()");
+	}
+}
+
+public class CallStackTest2 {
+
+	public static void main(String[] args) {
+		System.out.println("main(String[] args)이 시작되었음.");
+		firstmethod();
+		System.out.println("main(String[] args)이 끝났음.");
+	}
+
+	static void firstmethod() {
+		System.out.println("firstMethod()이 시작되었음.");
+		secondMethod();
+		System.out.println("firstMethod()이 끝났음.");
+	}
+
+	static void secondMethod() {
+		System.out.println("secondMethod()이 시작되었음.");
+		System.out.println("secondMethod()이 끝났음.");
+	}
+}
+
+public class Data {	int x; }
+
+public class PrimitiveParamEx {
+
+	public static void main(String[] args) {
+		Data d = new Data();
+		d.x = 10;
+		System.out.println("main() : x = " + d.x);
+
+		change(d.x);
+		System.out.println("After change(d.x)");
+		System.out.println("main() : x = " + d.x);
+	}
+
+	static void change(int x) {
+		x = 1000;
+		System.out.println("change() : x = " + x);
+	}
+}
+
+public class ReferenceParamEx {
+
+	public static void main(String[] args) {
+		Data d = new Data();
+		d.x = 10;
+		System.out.println("main() : x" + d.x);
+
+		change(d);
+		System.out.println("After change(d)");
+		System.out.println("main() : x = " + d.x);
+	}
+
+	static void change(Data d) {
+		d.x = 1000;
+		System.out.println("change() : x = " + d.x);
+	}
+}
+
+
