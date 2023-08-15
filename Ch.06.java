@@ -300,3 +300,95 @@ public class MyMath3 {
 	}
 }
 
+public class Car {
+	String color;
+	String gearType;
+	int door;
+
+	Car() {}
+
+	Car(String c, String g, int d) {
+		color = c;
+		gearType = g;
+		door = d;
+	}
+}
+
+public class Ex6_12 {
+
+	public static void main(String[] args) {
+		Car c1 = new Car();
+		c1.color = "Black";
+		c1.gearType = "auto";
+		c1.door = 2;
+
+		Car c2 = new Car("Pink", "auto", 4);
+
+		System.out.println("c1의 color=" + c1.color + ", gearType=" + c1.gearType + ", door=" + c1.door);
+		System.out.println("c2의 color=" + c2.color + ", gearType=" + c2.gearType + ", door=" + c2.door);
+	}
+
+}
+
+public class Student {
+
+	String name;
+	int ban;
+	int no;
+	int java;
+	int js;
+	int sql;
+
+	Student() {
+	}
+
+	Student(String name, int ban, int no, int java, int js, int sql) {
+		this.name = name;
+		this.ban = ban;
+		this.no = no;
+		this.java = java;
+		this.js = js;
+		this.sql = sql;
+	}
+
+	int getTotal() {
+		return java + js + sql;
+	}
+
+	float getAverage() {
+		return (int) (getTotal() / 3f * 10 + 0.5f) / 10f;
+	}
+
+	public String
+
+			info() {
+		return name + "," + ban + "," + no + "," + java + "," + js + "," + sql + "," + getTotal() + "," + getAverage();
+	}
+}
+
+public class Exercise6_2 {
+
+	public static void main(String[] args) {
+		Student s = new Student("박민기", 1, 1, 100, 60, 76);
+
+		String str = s.info();
+		System.out.println(str);
+	}
+}
+
+public class Exercise6_3 {
+
+	public static void main(String[] args) {
+		Student s = new Student();
+		s.name = "박민기";
+		s.ban = 1;
+		s.no = 1;
+		s.java = 100;
+		s.js = 60;
+		s.sql = 76;
+
+		System.out.println("이름:" + s.name);
+		System.out.println("총점:" + s.getTotal());
+		System.out.println("이름:" + s.getAverage());
+	}
+}
