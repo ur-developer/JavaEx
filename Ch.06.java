@@ -52,48 +52,50 @@ t1의 channel값을 7로 변경하였습니다.
 t1의 channel값은 7입니다.
 t2의 channel값은 0입니다.
 
-public class TvTest3 {
-
-	public static void main(String[] args) {
-		Tv[] tvArr = new Tv[3]; // 길이가 3인 Tv객체배열
-
-		// Tv객체를 생성해서 Tv객체 배열의 각 요소에 저장
-		for (int i = 0; i < tvArr.length; i++) {
-			tvArr[i] = new Tv();
-			tvArr[i].channel = i + 10; // tvArr[i]의 Channel에 i+10을 저장
-		}
-
-		for (int i = 0; i < tvArr.length; i++) {
-			tvArr[i].channelUp(); // tvArr[i]의 메서드를 호출. 채널이 1증가
-			System.out.printf("tvArr[%d].channel=%d%n", i, tvArr[i].channel);
-		}
-	}
-}
-
+Ex6_3
 public class Ex6_3 {
 	public static void main(String[] args) {
 		System.out.println("Card.width = " + Card.width);
 		System.out.println("Card.height = " + Card.height);
 		
 		Card c1 = new Card();
-		c1.kind = "heart";
+		c1.kind = "Heart";
 		c1.number = 7;
 		
-		Card c2	= new Card();
+		Card c2 = new Card();
 		c2.kind = "Spade";
 		c2.number = 4;
 		
-		System.out.println("c1은 " + c1.kind + ", " + c1.number +  "이며, 크기는 (" + c1.width + ", " + c1.height + ")" );
-		System.out.println("c2은 " + c2.kind + ", " + c2.number +  "이며, 크기는 (" + c2.width + ", " + c2.height + ")" );
-		System.out.println("c1의 width와 height를 각각 50, 80으로 변경합니다.");
-		
-		c1.width = 50;
+		System.out.println("c1은 " + c1.kind + ", " + c1.number
+						  + "이며, 크기는 (" + c1.width + " , " + c1.height + ")");
+		System.out.println("c2는 " + c2.kind + ", " + c2.number
+					      + "이며, 크기는 (" + c2.width + " , " + c2.height + ")");	
+		System.out.println(("C1의 width와 height를 각각 50, 80으로 변경합니다."));
+		c1.width  = 50;
 		c1.height = 80;
-		
-		System.out.println("c1은 " + c1.kind + ", " + c1.number +  "이며, 크기는 (" + c1.width + ", " + c1.height + ")" );
-		System.out.println("c2은 " + c2.kind + ", " + c2.number +  "이며, 크기는 (" + c2.width + ", " + c2.height + ")" );
+
+		System.out.println("c1은 " + c1.kind + ", " + c1.number
+						  + "이며, 크기는 (" + c1.width + " , " + c1.height + ")");
+		System.out.println("c2는 " + c2.kind + ", " + c2.number
+						  + "이며, 크기는 (" + c2.width + " , " + c2.height + ")");	
 	}
+	static class Card {
+		String kind;
+		int number;
+		static int width  = 100;
+		static int height = 250;
+	}	
 }
+
+<Console>
+Card.width = 100
+Card.height = 250
+c1은 Heart, 7이며, 크기는 (100 , 250)
+c2는 Spade, 4이며, 크기는 (100 , 250)
+C1의 width와 height를 각각 50, 80으로 변경합니다.
+c1은 Heart, 7이며, 크기는 (50 , 80)
+c2는 Spade, 4이며, 크기는 (50 , 80)
+
 
 public class MyMath {
 	long add(long a, long b) {
