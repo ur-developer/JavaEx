@@ -183,7 +183,7 @@ change() : x = 1000
 After change(d.x)
 main() : x + 10
 
-public class Data2 { int x;}
+class Data2 { int x;}
 
 public class Ex6_7 {
 
@@ -196,13 +196,18 @@ public class Ex6_7 {
 		System.out.println("After change(d)");
 		System.out.println("main() : x = " + d.x);
 	}
-
-		static void change(Data2 d) {
+		static void change(Data2 d) { // 참조형 매개변수
 			d.x = 1000;
 			System.out.println("change() : x = " + d.x);
 		}
 }
 	
+<Console>
+main() : x = 10
+change() : x = 1000
+After change(d)
+main() : x = 1000
+
 
 public class Data3 { int x;}
 
