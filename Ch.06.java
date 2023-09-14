@@ -358,6 +358,74 @@ public class Ex6_11 {
 Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
 	The constructor Data_2() is undefined
 
+//Ex6_12
+class Car {
+	String color;
+	String gearType;
+	int door; 
+		
+	Car() {}
+
+	Car(String c, String g, int d) {
+		color = c;
+		gearType = g;
+		door = d;
+	}
+}
+
+public class Ex6_12 {
+	public static void main(String[] args) {
+		Car c1 = new Car();
+		c1.color     = "white";
+		c1.gearType  = "auto";
+		c1.door =4 ;
+		
+		Car c2 = new Car("white", "auto", 4);
+		
+		System.out.println("c1의 color=" + c1.color + ", gear Type=" + c1.gearType+ ", door="+c1.door);
+		System.out.println("c2의 color=" + c2.color + ", gear Type=" + c2.gearType+ ", door="+c2.door);
+	}
+}
+
+<Console>
+c1의 color=white, gear Type=auto, door=4
+c2의 color=white, gear Type=auto, door=4
+
+//EX6_13
+class Car2 {
+	String color;
+	String gearType;
+	int door;
+	
+	Car2() {
+		this("white", "auto", 4);
+	}
+	
+	Car2(String color) {
+		this(color, "auto", 4);
+	}
+
+	Car2(String color, String geaType, int door) {
+		this.color = color;
+		this.gearType = gearType;
+		this.door = door;
+	}
+}
+public class Ex6_13 {
+
+	public static void main(String[] args) {
+		Car2 c1 = new Car2();
+		Car2 c2 =  new Car2("blue");
+
+		System.out.println("c1의 color=" + c1.color + ", gear Type=" + c1.gearType+ ", door="+c1.door);
+		System.out.println("c2의 color=" + c2.color + ", gear Type=" + c2.gearType+ ", door="+c2.door);
+	}
+}
+
+<Console>
+c1의 color=white, gear Type=null, door=4
+c2의 color=blue, gear Type=null, door=4
+
 
 public class CallStackTest {
 
