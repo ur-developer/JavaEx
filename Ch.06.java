@@ -426,220 +426,34 @@ public class Ex6_13 {
 c1의 color=white, gear Type=null, door=4
 c2의 color=blue, gear Type=null, door=4
 
-
-public class CallStackTest {
-
-	public static void main(String[] args) {
-		firstMethod();
+Ex6_14
+class Ex6_14 {
+	static {
+		System.out.println("static {}");
+	}
+	
+	{
+		System.out.println("{}");
 	}
 
-	static void firstMethod() {
-		secondMethod();
-	}
-
-	static void secondMethod() {
-		System.out.println("secondMethod()");
-	}
-}
-
-public class CallStackTest2 {
-
-	public static void main(String[] args) {
-		System.out.println("main(String[] args)이 시작되었음.");
-		firstmethod();
-		System.out.println("main(String[] args)이 끝났음.");
-	}
-
-	static void firstmethod() {
-		System.out.println("firstMethod()이 시작되었음.");
-		secondMethod();
-		System.out.println("firstMethod()이 끝났음.");
-	}
-
-	static void secondMethod() {
-		System.out.println("secondMethod()이 시작되었음.");
-		System.out.println("secondMethod()이 끝났음.");
-	}
-}
-
-public class Data {	int x; }
-
-public class PrimitiveParamEx {
-
-	public static void main(String[] args) {
-		Data d = new Data();
-		d.x = 10;
-		System.out.println("main() : x = " + d.x);
-
-		change(d.x);
-		System.out.println("After change(d.x)");
-		System.out.println("main() : x = " + d.x);
-	}
-
-	static void change(int x) {
-		x = 1000;
-		System.out.println("change() : x = " + x);
-	}
-}
-
-public class ReferenceParamEx {
-
-	public static void main(String[] args) {
-		Data d = new Data();
-		d.x = 10;
-		System.out.println("main() : x" + d.x);
-
-		change(d);
-		System.out.println("After change(d)");
-		System.out.println("main() : x = " + d.x);
-	}
-
-	static void change(Data d) {
-		d.x = 1000;
-		System.out.println("change() : x = " + d.x);
-	}
-}
-
-
-
-public class OverloadingTest {
-
-	public static void main(String[] args) {
-		MyMath3 mm = new MyMath3();
-		System.out.println("mm.add(3, 3) 결과:" + mm.add(3, 3));
-		System.out.println("mm.add(3L, 3) 결과:" + mm.add(3L, 3));
-		System.out.println("mm.add(3, 3L) 결과:" + mm.add(3, 3L));
-		System.out.println("mm.add(3L, 3L) 결과:" + mm.add(3L, 3L));
-
-		int[] a = { 100, 200, 300 };
-		System.out.println("mm.add(a) 결과: " + mm.add(a));
-	}
-}
-
-public class MyMath3 {
-
-	int add(int a, int b) {
-		System.out.println("int add(int a, int b) - ");
-		return a + b;
-	}
-
-	public MyMath3() {
-	}
-
-	long add(int a, long b) {
-		System.out.println("long add(int a, long b) - ");
-		return a + b;
-	}
-
-	long add(long a, int b) {
-		System.out.println("long add(long a, int b) - ");
-		return a + b;
-	}
-
-	long add(long a, long b) {
-		System.out.println("long add(long a, long b) - ");
-		return a + b;
-	}
-
-	int add(int[] a) {
-		System.out.println("int add(int[] a) -");
-		int result = 0;
-		for (int i = 0; i < a.length; i++) {
-			result += a[i];
+	public Ex6_14() {
+		System.out.println("생성자");
 		}
-		return result;
-	}
-}
-
-public class Car {
-	String color;
-	String gearType;
-	int door;
-
-	Car() {}
-
-	Car(String c, String g, int d) {
-		color = c;
-		gearType = g;
-		door = d;
-	}
-}
-
-public class Ex6_12 {
-
+	
 	public static void main(String[] args) {
-		Car c1 = new Car();
-		c1.color = "Black";
-		c1.gearType = "auto";
-		c1.door = 2;
-
-		Car c2 = new Car("Pink", "auto", 4);
-
-		System.out.println("c1의 color=" + c1.color + ", gearType=" + c1.gearType + ", door=" + c1.door);
-		System.out.println("c2의 color=" + c2.color + ", gearType=" + c2.gearType + ", door=" + c2.door);
-	}
-
-}
-
-public class Student {
-
-	String name;
-	int ban;
-	int no;
-	int java;
-	int js;
-	int sql;
-
-	Student() {
-	}
-
-	Student(String name, int ban, int no, int java, int js, int sql) {
-		this.name = name;
-		this.ban = ban;
-		this.no = no;
-		this.java = java;
-		this.js = js;
-		this.sql = sql;
-	}
-
-	int getTotal() {
-		return java + js + sql;
-	}
-
-	float getAverage() {
-		return (int) (getTotal() / 3f * 10 + 0.5f) / 10f;
-	}
-
-	public String
-
-			info() {
-		return name + "," + ban + "," + no + "," + java + "," + js + "," + sql + "," + getTotal() + "," + getAverage();
+		System.out.println("Ex6_14 bt = new Ex6_14();");
+		Ex6_14 btEx6_14 = new Ex6_14();
+		
+		System.out.println("Ex6_14 bt2 = new Ex6_14(); ");
+		Ex6_14 bt2 = new Ex6_14();
 	}
 }
 
-public class Exercise6_2 {
-
-	public static void main(String[] args) {
-		Student s = new Student("박민기", 1, 1, 100, 60, 76);
-
-		String str = s.info();
-		System.out.println(str);
-	}
-}
-
-public class Exercise6_3 {
-
-	public static void main(String[] args) {
-		Student s = new Student();
-		s.name = "박민기";
-		s.ban = 1;
-		s.no = 1;
-		s.java = 100;
-		s.js = 60;
-		s.sql = 76;
-
-		System.out.println("이름:" + s.name);
-		System.out.println("총점:" + s.getTotal());
-		System.out.println("이름:" + s.getAverage());
-	}
-}
+<Console>
+static {}
+Ex6_14 bt = new Ex6_14();
+{}
+생성자
+Ex6_14 bt2 = new Ex6_14(); 
+{}
+생성자
