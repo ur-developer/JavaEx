@@ -457,3 +457,86 @@ Ex6_14 bt = new Ex6_14();
 Ex6_14 bt2 = new Ex6_14(); 
 {}
 생성자
+
+//Ex6_15
+class Ex6_15 {
+	static int[] arr = new int[10];
+	
+	static {
+		for(int i=0; i<arr.length; i++) {
+			arr[i]= (int)(Math.random()*10) + 1;		
+		}
+	}
+	public static void main(String[] args) {
+		for(int i=0; i<arr.length; i++)
+			 System.out.println("arr["+i+"] :" + arr[i]);
+	}
+}
+
+<Console>
+arr[0] :7
+arr[1] :5
+arr[2] :6
+arr[3] :1
+arr[4] :5
+arr[5] :3
+arr[6] :6
+arr[7] :4
+arr[8] :9
+arr[9] :3
+
+연습문제
+
+// 다음과 같은 멤버변수를 갖는 Student클래스를 정의하시오.
+
+//Exercise6_1
+public class Student {
+	String name;
+	int ban;
+	int no;
+	int kor;
+	int eng;
+	int math;
+}
+ 
+//Exercise6_2
+class Exercise6_2 {
+	public static void main(String[] args) {
+		Student s =  new Student("홍길동", 1, 1, 100, 60, 76);
+		
+		String str = s.info();
+		System.out.println(str);
+	}
+}
+
+class Student {
+	String name;
+	int ban;
+	int no;
+	int kor;
+	int eng;
+	int math;
+
+	Student(String name	,int ban, int no, int kor, int eng,	int math) {
+			this.name = name;
+			this.ban  = ban;
+			this.no   = no; 
+			this.kor  = kor;
+			this.eng  = eng;
+			this.math = math;
+	}
+	
+	public String info() {
+		return name
+			 + ","+ban
+			 + ","+no
+			 + ","+kor
+			 + ","+eng
+			 + ","+math
+			 + ","+(kor+eng+math)
+			 + ","+((int)(kor+eng+math) / 3f * 10 + 0.5f / 10f);
+	}
+}
+
+<Console>
+홍길동,1,1,100,60,76,236,786.7166
