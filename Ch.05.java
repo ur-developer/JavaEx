@@ -65,72 +65,52 @@ public class Ex5_2 {
 총합 : 478
 평균 : 95.6
 
-
-//ArrayEx5
-public class ArrayEx5 {
-
+//Ex5_3
+class Ex5_3 {
 	public static void main(String[] args) {
-		int sum = 0;
-		float average = 0f;
-
-		int[] score = { 100, 88, 100, 100, 90 };
-		for (int i = 0; i < score.length; i++) {
-			sum += score[i];
+	int[] score = { 79, 88, 91, 33, 100, 55, 95};
+	
+	int max = score[0];  // 배열의 첫 번째 값으로 최대값을 초기화 한다.
+	int min = score[0];  // 배열의 첫 번째 값으로 최소값을 초기화 한다.
+	
+	for(int i=1; i < score.length; i++ ) { // 배열의 두 번째 요소부터 읽기 위해서 변수 i의ㅏ 값을 1로 초기화 했다.
+		if(score[i]> max) {
+			max = score[i];
+		} else if(score[i]< min) {
+			min = score[i];
 		}
-		average = sum / (float) score.length;
+	} // end of for
+	
+	System.out.println("최대값 :" + max);
+	System.out.println("최소값 :" + min);
+	} // end of main
+} // end of class
 
-		System.out.println("총점 : " + sum);
-		System.out.println("평균 : " + average);
-	}
-}
+<Console>
+최대값 :100
+최소값 :33
 
-//ArrayEx6
-public class ArrayEx6 {
+//Ex5_4
+import java.util.Arrays;
+
+public class Ex5_4 {
 	public static void main(String[] args) {
-		int[] score = { 79, 88, 91, 33, 100, 55, 95 };
-
-		int max = score[0];
-		int min = score[0];
-
-		for (int i = 1; i < score.length; i++)
-			if (score[i] > max) {
-				max = score[i];
-			} else if (score[i] < min) {
-				min = score[i];
-			}
-		System.out.println("최대값 :" + max);
-		System.out.println("최소값 :" + min);
-	}
-}
-
-//ArrayEx12
-public class ArrayEx12 {
-	public static void main(String[] args) {
-		String[] names = { "Kim", "Park", "Yi" };
-
-		for (int i = 0; i < names.length; i++)
-			System.out.println("names[" + i + "]: " + names[i]);
-
-		String tmp = names[2];
-		System.out.println("tmp:" + tmp);
-		names[0] = "Yu";
-
-		for (String str : names)
-			System.out.println(str);
-	}
-}
-
-ArrayEx14
-public class ArrayEx14 {
-
-	public static void main(String[] args) {
-		String src = "ABCDE";
-
-		for (int i = 0; i < src.length(); i++) {
-			char ch = src.charAt(i);
-			System.out.println("src.charAt(" + i + "):" + ch);
+		int[] numArr = {0,1,2,3,4,5,6,7,8,9};
+		System.out.println(Arrays.toString(numArr));
+		
+		for (int i=0; i <100; i++) {
+			int n = (int)(Math.random() * 10); // 0~9 중의 한 값을 임의로 얻는다.
+			
+			// numArr[0] numArr[n]의 값을 서로 바꾼다.
+			int tmp  = numArr[0];
+			numArr[0] = numArr[n];
+			numArr[n] = tmp; 
 		}
-		char[] chArr = src.toCharArray();
-		System.out.println(chArr);
-	}
+		System.out.println(Arrays.toString(numArr));
+	} // main의 끝
 }
+
+<Console>
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+[5, 7, 0, 8, 3, 1, 4, 9, 6, 2]
+
