@@ -114,3 +114,64 @@ public class Ex5_4 {
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 [5, 7, 0, 8, 3, 1, 4, 9, 6, 2]
 
+//Ex5_5
+public class Ex5_5 {
+	public static void main(String[] args) {
+		int[] ball = new int[45]; // 45개의 정수값을 젖아하기 위한 배열 생성.
+		
+		// 배열의 각요소에 1~45의 값을 저장한다.
+		for(int i=0; i < ball.length; i++) 
+			ball[i]= i+1;  // ball[0]에 1이 저장된다.
+		
+		int tmp = 0 ; // 두 값을 바꾸는 사용할 임시 변수
+		int j = 0 ;   // 임의의 값을 얻어서 저장할 변수
+		
+		// 배열의 i번째 요소와 임의의 요소에 저장된 값을 서로 바꿔서 값을 섞는다.
+		// 0번째 부터 5번째 요소까지 모두 6개만 바꾼다.
+		for(int i=0; i < 6; i++) {
+			j = (int)(Math.random() * 45); // 0~44 범위의 임의의 값을 얻는다.
+			// ball[i]와 ball[j]의 값을 서로 바꾼다.
+			tmp      = ball[i];
+			ball[i]  = ball[j]; 
+			ball[j]  = tmp; 
+		}
+		// 배열 ball의 앞에서 부터 6개의 요소를 출력한다.
+		for(int i=0; i < 6; i++)
+			System.out.printf("ball[%d]=%d%n", i, ball[i]);
+	}
+}
+
+<Console>
+ball[0]=29
+ball[1]=9
+ball[2]=27
+ball[3]=24
+ball[4]=26
+ball[5]=7
+
+//Ex5_6
+public class Ex5_6 {
+
+	public static void main(String[] args) {
+		String[] names = {"Kim","Park","Yi"};
+		
+		for(int i=0; i < names.length; i++)
+			System.out.println("names["+i+"]:"+names[i]);
+
+		String tmp = names[2]; // 배열 names의 세 번째 요소를 tmp에 저장
+		System.out.println("tmp:"+tmp);
+		names[0] = "Yu"; // 배열 names의 첫 번째 요소를 "Yu"로 변경
+		
+		for(int i=0; i < names.length; i++)
+			System.out.println(names[i]);
+	} // main
+}
+
+<Console>
+names[0]:Kim
+names[1]:Park
+names[2]:Yi
+tmp:Yi
+Yu
+Park
+Yi
