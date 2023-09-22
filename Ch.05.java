@@ -175,3 +175,54 @@ tmp:Yi
 Yu
 Park
 Yi
+
+//Ex5_7
+public class Ex5_7 {
+
+	public static void main(String[] args) {
+		System.out.println("매개변수의 개수:"+args.length);
+		  for(int i=0; i< args.length; i++) {
+			  System.out.println("args[" + i + "] = \""+ args[i]+ "\"" );
+		 }
+	}
+}
+
+<Console>
+매개변수의 개수:0
+
+//Ex5_8
+public class Ex5_8 {
+
+	public static void main(String[] args) {
+		int[][] score = {
+				{ 100, 100, 100 },
+				{ 20, 20, 20 },
+				{30, 30, 30 },
+				{40, 40, 40 }
+		  };
+		int sum = 0;   
+	
+		for (int i = 0; i < score.length; i++) {
+			for (int j = 0; j < score[i].length; j++) {
+				System.out.printf("score[%d][%d]=%d%n", i, j, score[i][j]);
+			
+				sum += score[i][j];
+			}
+		}
+		System.out.println("sum=" + sum);
+	}
+}
+
+<Console>
+score[0][1]=100
+score[0][2]=100
+score[1][0]=20
+score[1][1]=20
+score[1][2]=20
+score[2][0]=30
+score[2][1]=30
+score[2][2]=30
+score[3][0]=40
+score[3][1]=40
+score[3][2]=40
+sum=570
