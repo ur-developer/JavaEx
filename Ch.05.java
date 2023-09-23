@@ -226,3 +226,92 @@ score[3][0]=40
 score[3][1]=40
 score[3][2]=40
 sum=570
+
+//Ex5_9
+public class Ex5_9 {
+
+	public static void main(String[] args) {
+		int[][] score = {
+				{ 100, 100, 100 },
+				{ 20, 20, 20 },
+				{ 30, 30, 30 },
+				{ 40, 40, 40 },
+				{ 50, 50, 50 }
+			};
+	// 과목별 총점
+		int korTotal = 0 , engTotal = 0, mathTotal = 0;
+	
+		System.out.println(" 번호  국어  영어  수학  총점  평균");
+		System.out.println("===============================");
+		
+		for (int i= 0; i < score.length; i++) {
+			int sum = 0;	  // 개인별 총점
+			float avg = 0.0f; // 개인별 평균
+			
+			korTotal  += score[i][0];
+			engTotal  += score[i][1];
+			mathTotal += score[i][2];
+			System.out.printf("%3d", i+1);
+			
+			for(int j = 0; j < score[i].length; j++) {
+				sum += score[i][j];
+				System.out.printf("%5d", score[i][j]);			
+			}
+			
+			avg = sum/(float)score[i].length; // 평균계산
+			System.out.printf("%5d %5.1f%n", sum, avg);
+		}
+		
+		System.out.println("===============================");
+		System.out.printf("총점 : %3d %4d %4d%n", korTotal, engTotal, mathTotal);
+	}
+}
+
+<Console>
+ 번호  국어  영어  수학  총점  평균
+=============================
+  1  100  100  100  300 100.0
+  2   20   20   20   60  20.0
+  3   30   30   30   90  30.0
+  4   40   40   40  120  40.0
+  5   50   50   50  150  50.0
+=============================
+총점 : 240  240  240
+
+//Ex5_10
+import java.util.Scanner;
+
+public class Ex5_10 {
+
+	public static void main(String[] args) {
+		String[][] words = {
+				{"chair","의자"},	   // words[0][0], words[0][1]
+				{"computer", "컴퓨터"},  // words[1][0], words[1][1]
+				{"integer", "정수"}     // words[2][0], words[2][1]
+		};
+		
+		Scanner scanner =  new Scanner(System.in);
+		
+		for(int i=0; i < words.length; i++ ) {
+			System.out.printf("Q%d. %s의 뜻은?", i+1, words[i][0]);
+		
+			String tmp = scanner.nextLine();
+			
+			if(tmp.equals(words[i][1])) {
+				System.out.printf("정답입니다.%n%n");
+			} else {
+				System.out.printf("틀렸습니다. 정답은 %s입니다. %n%n", words[i][1]);
+			}
+		}  // for
+	} // main의 끝
+}
+
+<Console>
+Q1. chair의 뜻은? 의자
+틀렸습니다. 정답은 의자입니다. 
+
+Q2. computer의 뜻은?컴퓨터
+정답입니다.
+
+Q3. integer의 뜻은?정수
+정답입니다.
