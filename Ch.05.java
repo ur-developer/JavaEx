@@ -315,3 +315,75 @@ Q2. computer의 뜻은?컴퓨터
 
 Q3. integer의 뜻은?정수
 정답입니다.
+
+//Ex Exercise5_2
+public class Exercise5_2{
+
+	public static void main(String[] args) {
+		int[][] arr = {
+				{ 5, 5, 5, 5, 5},
+				{10, 10, 10},
+				{20, 20, 20, 20},
+				{ 30, 30}
+		};
+		System.out.println(arr[0].length);
+		System.out.println(arr[1].length);
+		System.out.println(arr[2].length);
+		System.out.println(arr[3].length);
+	}	
+}
+
+<Console>
+5
+3
+4
+2
+
+arr[3].length = 2
+
+// Exercise5_3
+public class Exercise5_3 {
+
+	public static void main(String[] args) {
+		int[] arr = { 10, 20, 30, 40, 50 };
+		int sum = 0;
+		
+		for(int i = 0;  i < arr.length; i++) {
+			sum += arr[i];
+		}
+		System.out.println("sum=" + sum);
+	}
+}
+
+<Console>
+sum=150
+
+Exercise5_4
+public class Exercise5_4 {
+
+	public static void main(String[] args) {
+		int[][] arr = {
+				{ 5, 5, 5, 5, 5 },
+				{ 10, 10, 10, 10, 10 },
+				{ 20, 20, 20, 20, 20 },
+				{ 30, 30, 30, 30, 30 }
+		};
+
+		int total = 0;
+		float average = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
+			for(int j=0; j < arr[i].length; j++) {
+				total += arr[i][j];
+			}
+		}
+		
+		average = total / (float)(arr.length * arr[0].length);
+		System.out.println("total=" + total);
+		System.out.println("average=" + average);
+	} // end of main
+} // end of class
+
+<Console>
+total=325
+average=16.25
