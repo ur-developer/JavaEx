@@ -19,6 +19,9 @@ class Value {
 	}
 }
 
+<Console>
+v1와 v2는 다릅니다.
+
 //Ex9_2
 class Person {
 	long id;
@@ -48,8 +51,11 @@ public class Ex9_2 {
 	}
 }
 
-public class Ex9_3 {
+<Console>
+p1과 p2는 같은 사람입니다.
 
+//Ex9_3
+public class Ex9_3 {
 	public static void main(String[] args) {
 		String str1 = new String("abc");
 		String str2 = new String("abc");
@@ -62,18 +68,15 @@ public class Ex9_3 {
 	}
 }
 
-// Ex9_4
-public class Ex9_4 {
-	public static void main(String[] args) {
-		Card c1 = new Card();
-		Card c2 = new Card();
+<Console>
+true
+96354
+96354
+1365202186
+1651191114
 
-		System.out.println(c1.toString());
-		System.out.println(c2.toString());
-	}
-}
-
-public class Card {
+//Ex9_4
+class Card {
 	String kind;
 	int number;
 
@@ -87,17 +90,22 @@ public class Card {
 	}
 }
 
-public class Ex9_5 {
-
+public class Ex9_4 {
 	public static void main(String[] args) {
-		Card2 c1 = new Card2();
-		Card2 c2 = new Card2("HEART", 10);
+		Card c1 = new Card();
+		Card c2 = new Card();
+
 		System.out.println(c1.toString());
 		System.out.println(c2.toString());
 	}
 }
 
-public class Card2 {
+<Console>
+Ch9.Card@6f2b958e
+Ch9.Card@5e91993f
+
+//Ex9_5
+class Card2 {
 	String kind;
 	int number;
 
@@ -115,3 +123,17 @@ public class Card2 {
 		return "kind : " + kind + ", number : " + number;
 	}
 }
+
+public class Ex9_5 {
+
+	public static void main(String[] args) {
+		Card2 c1 = new Card2();
+		Card2 c2 = new Card2("HEART", 10);
+		System.out.println(c1.toString());
+		System.out.println(c2.toString());
+	}
+}
+
+<Console>
+kind : SPADE, number : 1
+kind : HEART, number : 10
